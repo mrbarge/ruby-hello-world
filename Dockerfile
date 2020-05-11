@@ -10,4 +10,8 @@ CMD ["scl", "enable", "rh-ruby25", "./run.sh"]
 
 USER root
 RUN chmod og+rw /opt/app-root/src/db
+RUN mkdir /hello
+RUN useradd -u 1001 -g 1001 hello
+RUN chown -R 1001:1001 /hello
+
 USER default
